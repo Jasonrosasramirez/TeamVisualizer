@@ -1,0 +1,12 @@
+:root {
+    --redJumbotronColor:rgb(233, 70, 70);
+
+}
+
+
+.jumbotron {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: var(--redJumbotronColor);
+}
