@@ -116,20 +116,9 @@ const questionsIntern = [
         name: "schoolIntern"
     }
 
-    /*
-    
-    done building team roster
-        yes
-        no 
-
-    finised building team? 
-        yes, display page 
-        no, loop again
-
-    */
-
 ]; 
 
+const questionsBuilding = [];
 
 console.log(questionsManager);
 console.log(questionsEngineer);

@@ -9,11 +9,11 @@
     font-weight: bold;
     color: white;
     background-color: var(--redJumbotronColor);
+    border-bottom: 4px solid rgb(122, 42, 42);
+
 
     margin-bottom: 20px;
 }
-
-
 
 /* the team member cards */
 
