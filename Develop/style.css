@@ -14,11 +14,12 @@
 }
 
 
+
 /* the team member cards */
 
 .card {
     margin: 0px 10px 20px 10px;
-    border: 2px solid black;
+    /*border: 2px solid black; */
 }
 
 .cardTitle-head { 
