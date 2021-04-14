@@ -36,16 +36,43 @@ const questionsManager = [
         employee id
         email address
         office number
-    
-    list selection of positions 
-        engineer
-        intern
 
-    engineer card
-        name
-        ID
-        email
-        GitHub
+    */
+
+]; 
+
+const questionsEngineer = [
+    // questions needed
+
+    {
+        type: "input", 
+        message: "What is the engineer's name?",
+        name: "nameEngineer"
+    }, 
+
+    {
+        type: "input", 
+        message: "What is the engineer's employee ID?",
+        name: "idEngineer"
+    },
+    
+    {
+        type: "input", 
+        message: "What is the engineer's email address?",
+        name: "emailEngineer"
+    },
+
+    {
+        type: "input", 
+        message: "What is the engineer's GitHub?",
+        name: "githubEngineer"
+    }
+
+    /*
+    
+    done building team roster
+        yes
+        no 
 
     intern card
         name
@@ -56,6 +83,54 @@ const questionsManager = [
     finised building team? 
         yes, display page 
         no, loop again
+
+    */
+
+
+]; 
+
+const questionsIntern = [
+    // questions needed
+
+    {
+        type: "input", 
+        message: "What is the intern's name?",
+        name: "nameIntern"
+    }, 
+
+    {
+        type: "input", 
+        message: "What is the intern's employee ID?",
+        name: "idIntern"
+    },
+    
+    {
+        type: "input", 
+        message: "What is the intern's email address?",
+        name: "emailIntern"
+    },
+
+    {
+        type: "input", 
+        message: "What is the Intern's school?",
+        name: "schoolIntern"
+    }
+
+    /*
+    
+    done building team roster
+        yes
+        no 
+
+    finised building team? 
+        yes, display page 
+        no, loop again
+
     */
 
 ]; 
+
+
+console.log(questionsManager);
+console.log(questionsEngineer);
+console.log(questionsIntern);
