@@ -17,7 +17,7 @@
 /* the team member cards */
 
 .card {
-    margin: 0px 20px 20px 20px;
+    margin: 0px 10px 20px 10px;
     border: 2px solid black;
 }
 
@@ -28,6 +28,7 @@
 
 .card_iconANDtitle {   
     display: flex;
+    align-items: baseline;
 }
 
 .cardClass { 
