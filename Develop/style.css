@@ -1,6 +1,6 @@
 :root {
     --redJumbotronColor:rgb(233, 70, 70);
-    --blueCardTitleColor: rgb(55, 55, 245); 
+    --blueCardTitleColor: rgb(46, 66, 243); 
 }
 
 .jumbotron {
@@ -16,6 +16,11 @@
 
 /* the team member cards */
 
+.card {
+    margin: 0px 20px 20px 20px;
+    border: 2px solid black;
+}
+
 .cardTitle-head { 
     background-color: var(--blueCardTitleColor);
     color: white;
@@ -23,4 +28,8 @@
 
 .card_iconANDtitle {   
     display: flex;
+}
+
+.cardClass { 
+    margin-left: 10px;
 }
