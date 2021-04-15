@@ -1,7 +1,7 @@
-console.log("Hello workd. I am the console");
+var iterationCount = 0;
 
-// const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
-// const inquirer = require("inquirer"); 
+const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
+const inquirer = require("inquirer"); 
 
 const questionsManager = [
     // questions needed
@@ -120,6 +120,17 @@ const questionsIntern = [
 
 const questionsBuilding = [];
 
-console.log(questionsManager);
-console.log(questionsEngineer);
-console.log(questionsIntern);
+function askAboutManager() { 
+
+
+}
+
+function init() { 
+    var questionsToTerminal; 
+
+    inquirer
+    .prompt(questionsManager)
+
+}
+
+init(); 
