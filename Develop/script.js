@@ -165,6 +165,8 @@ var questionsAddMember = [
 
 
 function init() { 
+    // this should work like a decision tree. First question is manager, then 3 branching paths, 2 that iterate
+    
     let questionsMemberDescription; 
 
     if (iterationCount == 0) {
@@ -176,7 +178,9 @@ function init() {
     inquirer // I need to speak with your manager
     .prompt(questionsMemberDescription)
     .then((answer) => {
-        console.log(answer);
+
+        var teamManager = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // builds the new manager. Only one is required for this project. 
+        console.log(teamManager);
 
         // I can probably make this its own function and have it loop through untli the manager decides they are good
         inquirer 
@@ -187,6 +191,10 @@ function init() {
             if (answer.addMemberChoice == "Add Engineer") {
                 inquirer
                 .prompt(questionsEngineer)
+                .then((answer) => { 
+                    var newEngineer = new Manager (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer);
+                    console.log(newEngineer);
+                })
                 // and then it has to self loop again. Probs will use a function loop 
             }
 
