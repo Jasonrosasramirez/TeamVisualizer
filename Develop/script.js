@@ -1,7 +1,8 @@
-var iterationCount = 0;
-
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
+
+var iterationCount = 0;
+
 
 var questionsManager = [
     // questions needed
@@ -128,24 +129,45 @@ var questionsAddMember = [
 
 ];
 
+
+
 function init() { 
-    var questionsToTerminal; 
+    let questionsMemberDescription; 
 
     if (iterationCount == 0) {
-        questionsToTerminal = questionsManager; 
+        questionsMemberDescription = questionsManager; 
     }
 
-    inquirer
-    .prompt(questionsToTerminal)
+    /* What is displayed on screen */
+
+    inquirer // I need to speak with your manager
+    .prompt(questionsMemberDescription)
     .then((answer) => {
         console.log(answer);
 
-        inquirer
+        // I can probably make this its own function and have it loop through untli the manager decides they are good
+        inquirer 
         .prompt(questionsAddMember)
         .then((answer) => { 
             console.log(answer.addMemberChoice)
-    
+
+            if (answer.addMemberChoice == "Add Engineer") {
+                inquirer
+                .prompt(questionsEngineer)
+                // and then it has to self loop again
+            }
+
+            else if (answer.addMemberChoice == "Add Intern") {
+                inquirer
+                .prompt(questionsIntern)
+
+            } else { 
+                console.log("It's time to build the page :D"); 
+                // and then it has to self loop again
+            }
+
         })
+
     })
 
 
