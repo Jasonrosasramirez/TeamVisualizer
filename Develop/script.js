@@ -122,7 +122,7 @@ var questionsAddMember = [
     {
         type: "list", // A list here will come out as a string. Using checklist will output results as an array, which is more work. 
         message: "Continue building your team?", 
-        name: "license", 
+        name: "addMemberChoice", 
         choices: ["Add Engineer", "Add Intern", "Team is Complete"]  
     }
 
@@ -140,7 +140,15 @@ function init() {
     .then((answer) => {
         console.log(answer);
 
+        inquirer
+        .prompt(questionsAddMember)
+        .then((answer) => { 
+            console.log(answer.addMemberChoice)
+    
+        })
     })
+
+
 
 }
 
