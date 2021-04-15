@@ -1,7 +1,18 @@
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
-
 var iterationCount = 0;
+
+class Manager { 
+    // will contain the object properties of the manager
+
+    constructor(name, id, email, phone) { // constructor will build the object using the parameters
+        this.name = name; // this. referes to the object that new just created. Example var teamManager = new Manager (answer.nameManager); 
+        this.id = id; 
+        this.email = email; 
+        this.phone = phone;
+
+    }
+}
 
 
 var questionsManager = [
@@ -154,7 +165,7 @@ function init() {
             if (answer.addMemberChoice == "Add Engineer") {
                 inquirer
                 .prompt(questionsEngineer)
-                // and then it has to self loop again
+                // and then it has to self loop again. Probs will use a function loop 
             }
 
             else if (answer.addMemberChoice == "Add Intern") {
