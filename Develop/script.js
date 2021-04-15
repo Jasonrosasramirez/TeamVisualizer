@@ -3,7 +3,7 @@ var iterationCount = 0;
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
 
-const questionsManager = [
+var questionsManager = [
     // questions needed
 
     {
@@ -41,7 +41,7 @@ const questionsManager = [
 
 ]; 
 
-const questionsEngineer = [
+var questionsEngineer = [
     // questions needed
 
     {
@@ -89,7 +89,7 @@ const questionsEngineer = [
 
 ]; 
 
-const questionsIntern = [
+var questionsIntern = [
     // questions needed
 
     {
@@ -118,18 +118,29 @@ const questionsIntern = [
 
 ]; 
 
-const questionsBuilding = [];
+var questionsAddMember = [
+    {
+        type: "list", // A list here will come out as a string. Using checklist will output results as an array, which is more work. 
+        message: "Continue building your team?", 
+        name: "license", 
+        choices: ["Add Engineer", "Add Intern", "Team is Complete"]  
+    }
 
-function askAboutManager() { 
-
-
-}
+];
 
 function init() { 
     var questionsToTerminal; 
 
+    if (iterationCount == 0) {
+        questionsToTerminal = questionsManager; 
+    }
+
     inquirer
-    .prompt(questionsManager)
+    .prompt(questionsToTerminal)
+    .then((answer) => {
+        console.log(answer);
+
+    })
 
 }
 
