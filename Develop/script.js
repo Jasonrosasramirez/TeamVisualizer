@@ -192,19 +192,26 @@ function init() {
                 inquirer
                 .prompt(questionsEngineer)
                 .then((answer) => { 
-                    var newEngineer = new Manager (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer);
+                    var newEngineer = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer);
                     console.log(newEngineer);
+
+                    // and then it has to self loop again. Probs will use a function loop
                 })
-                // and then it has to self loop again. Probs will use a function loop 
+                 
             }
 
             else if (answer.addMemberChoice == "Add Intern") {
                 inquirer
                 .prompt(questionsIntern)
+                .then((answer) => { 
+                    var newIntern = new Intern (answer.intern, answer.idIntern, answer.emailIntern, answer.schoolIntern);
+                    console.log(newIntern);
 
+                    // and then it has to self loop again. Probs will use a function loop
+                })
             } else { 
                 console.log("It's time to build the page :D"); 
-                // and then it has to self loop again
+                // and then I call the build HTML function here
             }
 
         })
