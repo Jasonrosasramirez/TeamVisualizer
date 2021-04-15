@@ -12,6 +12,28 @@ class Manager {
         this.phone = phone;
 
     }
+} // class template for whenever this object is built. 
+
+class Engineer { 
+    
+    constructor(name, id, email, github) { 
+        this.name = name;  
+        this.id = id; 
+        this.email = email; 
+        this.github = github;
+
+    }
+}
+
+class Intern { 
+    
+    constructor(name, id, email, school) { 
+        this.name = name;  
+        this.id = id; 
+        this.email = email; 
+        this.school = school;
+
+    }
 }
 
 
