@@ -166,6 +166,29 @@ function createEngineer() {
 }
 
 
+/* brings things together */
+
+function continueAddingMembers () {
+    
+    inquirer 
+    .prompt(questionsAddMember) 
+    .then((answer) => { 
+
+         if (answer.addMemberChoice == "Add Engineer") {
+            
+            createEngineer();
+
+         } else {
+            
+            console.log("I would still like an engineer :) ");
+
+            }
+                
+    })
+
+}
+
+
 function promptQuestions() {
     
     inquirer 
@@ -175,11 +198,9 @@ function promptQuestions() {
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager);  
         console.log(managerObject);
         
-        createEngineer();
+        continueAddingMembers();
     
     })  
-
-    
 
 }
 
