@@ -1,6 +1,7 @@
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
 
+/* Questions that will be asked to the user */
 
 var questionsManager = [
     // questions needed
@@ -128,9 +129,12 @@ var questionsAddMember = [
 ];
 
 
+function promptQuestions() {
+    console.log("hello :D I am the index javascript file"); 
 
+}
 
-
+promptQuestions();
 
 
 
