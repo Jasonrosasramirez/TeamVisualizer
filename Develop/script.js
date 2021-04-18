@@ -129,6 +129,31 @@ var questionsAddMember = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* junk now. I may reference this logic later once the object class templates are brought back in. 
+
 function init() { 
     // this should work like a decision tree. First question is manager, then 3 branching paths, 2 that iterate
     
@@ -137,8 +162,6 @@ function init() {
     if (iterationCount == 0) {
         questionsMemberDescription = questionsManager; 
     }
-
-    /* What is displayed on screen */
 
     inquirer // I need to speak with your manager
     .prompt(questionsMemberDescription)
@@ -186,3 +209,7 @@ function init() {
 }
 
 init(); 
+
+*/
+
+
