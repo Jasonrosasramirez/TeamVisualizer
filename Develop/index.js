@@ -1,6 +1,6 @@
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
-var groupCreationOrder = 0;
+var groupIndexOrder = 0;
 
 /* imports the build classes to create a new employee object with certain classes. */ /*  All classes build off of the Employee.js */
 
@@ -161,6 +161,8 @@ function createEngineerObject() {
         var engineerObject = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
         console.log(engineerObject);
 
+        continueAddingMembers();
+
     })  
 
 }
@@ -173,6 +175,8 @@ function createInternObject() {
 
         var InternObject = new Intern (answer.nameIntern, answer.Intern, answer.emailIntern, answer.schoolIntern); 
         console.log(InternObject);
+
+        continueAddingMembers();
 
     })  
 
@@ -224,87 +228,4 @@ function promptQuestions() {
 
 
 promptQuestions(); // this is the line that makes the magic happen. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* junk now. I may reference this logic later once the object class templates are brought back in. 
-
-function init() { 
-    // this should work like a decision tree. First question is manager, then 3 branching paths, 2 that iterate
-    
-    let questionsMemberDescription; 
-
-    if (iterationCount == 0) {
-        questionsMemberDescription = questionsManager; 
-    }
-
-    inquirer // I need to speak with your manager
-    .prompt(questionsMemberDescription)
-    .then((answer) => {
-
-        var teamManager = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // builds the new manager. Only one is required for this project. 
-        console.log(teamManager);
-
-        // I can probably make this its own function and have it loop through untli the manager decides they are good
-        inquirer 
-        .prompt(questionsAddMember)
-        .then((answer) => { 
-            console.log(answer.addMemberChoice)
-
-            if (answer.addMemberChoice == "Add Engineer") {
-                inquirer
-                .prompt(questionsEngineer)
-                .then((answer) => { 
-                    var newEngineer = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer);
-                    console.log(newEngineer);
-
-                    // and then it has to self loop again. Probs will use a function loop
-                })
-                 
-            }
-
-            else if (answer.addMemberChoice == "Add Intern") {
-                inquirer
-                .prompt(questionsIntern)
-                .then((answer) => { 
-                    var newIntern = new Intern (answer.intern, answer.idIntern, answer.emailIntern, answer.schoolIntern);
-                    console.log(newIntern);
-
-                    // and then it has to self loop again. Probs will use a function loop
-                })
-            } else { 
-                console.log("It's time to build the page :D"); 
-                // and then I call the build HTML function here
-            }
-
-        })
-
-    })
-
-}
-
-init(); 
-
-*/
-
 
