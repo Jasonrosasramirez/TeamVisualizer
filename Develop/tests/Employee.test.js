@@ -31,3 +31,34 @@ test("Can we grab an email using the constructor parameter", () => {
 
 })
 
+test("Can we grab getName() in the employee class", () => {
+
+    const value = "Jason";
+    const emp = new Employee(value); 
+    expect(emp.getName()).toBe(value);
+
+})
+
+test("Can we grab getId() in the employee class", () => {
+
+    const value = 8011;
+    const emp = new Employee("Jason", value); 
+    expect(emp.getId()).toBe(value);
+
+})
+
+test("Can we grab getEmail() in the employee class", () => {
+
+    const value = "jason@Gopher.com";
+    const emp = new Employee("Jason", 8011, value); 
+    expect(emp.getEmail()).toBe(value);
+
+})
+
+test("Can we grab getrole() in the employee class", () => {
+
+    const value = "Employee";
+    const emp = new Employee("Jason", 8011, "jason@Gopher.com", value); 
+    expect(emp.getrole()).toBe(value);
+
+})
