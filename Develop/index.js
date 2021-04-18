@@ -1,9 +1,8 @@
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
+var groupCreationOrder = 0;
 
-
-/*  imports the build classes to create a new employee object with certain classes. */
-/*  All classes build off of the Employee.js */
+/* imports the build classes to create a new employee object with certain classes. */ /*  All classes build off of the Employee.js */
 
 const Manager = require("./lib/Manager"); // imports the information from the employee script
 const Engineer = require("./lib/Engineer"); 
@@ -138,7 +137,20 @@ var questionsAddMember = [
 ];
 
 
+/* functions that build the new employee objects */
 
+function createManager() {
+    
+    inquirer 
+    .prompt(questionsManager) // prompts the questions that are specific to the manager.
+    .then((answer) => { // builds using this specific case. 
+
+        var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // creates a new object by refering the manager class variable, which references the script 
+        console.log(managerObject);
+
+    })  
+
+}
 
 function createEngineer() {
     
@@ -146,8 +158,8 @@ function createEngineer() {
     .prompt(questionsEngineer)
     .then((answer) => {
 
-        var engineerPerson = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
-        console.log(engineerPerson);
+        var engineerObject = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
+        console.log(engineerObject);
 
     })  
 
@@ -156,9 +168,18 @@ function createEngineer() {
 
 function promptQuestions() {
     
-    console.log("hello :D I am the index javascript file"); 
-    createEngineer();
+    inquirer 
+    .prompt(questionsManager) 
+    .then((answer) => { 
 
+        var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager);  
+        console.log(managerObject);
+        
+        createEngineer();
+    
+    })  
+
+    
 
 }
 
