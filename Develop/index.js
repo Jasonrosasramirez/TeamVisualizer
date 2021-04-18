@@ -165,6 +165,18 @@ function createEngineer() {
 
 }
 
+function createIntern() {
+    
+    inquirer 
+    .prompt(questionsIntern)
+    .then((answer) => {
+
+        var InternObject = new Intern (answer.nameIntern, answer.Intern, answer.emailIntern, answer.schoolIntern); 
+        console.log(InternObject);
+
+    })  
+
+}
 
 /* brings things together */
 
@@ -178,11 +190,17 @@ function continueAddingMembers () {
             
             createEngineer();
 
+         } 
+         
+         else if (answer.addMemberChoice == "Add Intern") {
+
+            createIntern();
+
          } else {
             
-            console.log("I would still like an engineer :) ");
+            console.log(" This is where the page function is called in ");
 
-            }
+        }
                 
     })
 
