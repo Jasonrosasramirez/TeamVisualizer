@@ -152,7 +152,7 @@ function createManager() {
 
 }
 
-function createEngineer() {
+function createEngineerObject() {
     
     inquirer 
     .prompt(questionsEngineer)
@@ -165,7 +165,7 @@ function createEngineer() {
 
 }
 
-function createIntern() {
+function createInternObject() {
     
     inquirer 
     .prompt(questionsIntern)
@@ -188,13 +188,13 @@ function continueAddingMembers () {
 
          if (answer.addMemberChoice == "Add Engineer") {
             
-            createEngineer();
+            createEngineerObject();
 
          } 
          
          else if (answer.addMemberChoice == "Add Intern") {
 
-            createIntern();
+            createInternObject();
 
          } else {
             
@@ -222,7 +222,8 @@ function promptQuestions() {
 
 }
 
-promptQuestions();
+
+promptQuestions(); // this is the line that makes the magic happen. 
 
 
 
