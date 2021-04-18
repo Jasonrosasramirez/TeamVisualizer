@@ -1,40 +1,5 @@
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
-var iterationCount = 0;
-
-class Manager { 
-    // will contain the object properties of the manager
-
-    constructor(name, id, email, phone) { // constructor will build the object using the parameters
-        this.name = name; // this. referes to the object that new just created. Example var teamManager = new Manager (answer.nameManager); 
-        this.id = id; 
-        this.email = email; 
-        this.phone = phone;
-
-    }
-} // class template for whenever this object is built. 
-
-class Engineer { 
-    
-    constructor(name, id, email, github) { 
-        this.name = name;  
-        this.id = id; 
-        this.email = email; 
-        this.github = github;
-
-    }
-}
-
-class Intern { 
-    
-    constructor(name, id, email, school) { 
-        this.name = name;  
-        this.id = id; 
-        this.email = email; 
-        this.school = school;
-
-    }
-}
 
 
 var questionsManager = [
@@ -217,8 +182,6 @@ function init() {
         })
 
     })
-
-
 
 }
 
