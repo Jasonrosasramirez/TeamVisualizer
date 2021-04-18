@@ -1,10 +1,13 @@
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
 
+
 /*  imports the build classes to create a new employee object with certain classes. */
 /*  All classes build off of the Employee.js */
 
-const Engineer = require("./lib/Engineer"); // imports the information from the employee script 
+const Manager = require("./lib/Manager"); // imports the information from the employee script
+const Engineer = require("./lib/Engineer"); 
+const Intern = require("./lib/Intern");
 
 
 /* Questions that will be asked to the user */
@@ -143,11 +146,10 @@ function createEngineer() {
     .prompt(questionsEngineer)
     .then((answer) => {
 
-        var engineerPerson = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); // builds the new manager. Only one is required for this project. 
+        var engineerPerson = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
         console.log(engineerPerson);
 
     })  
-
 
 }
 
