@@ -231,7 +231,7 @@ promptQuestions(); // this is the line that makes the magic happen.
 
 /* generate html sections */
 
-// This is what actually writes/updates the README file. 
+// This is what actually writes/updates the HTML file. 
 function writeToFile(fileName, template) {
 
     //fs.writeFile(fileName, data, [encoding], [callback])
