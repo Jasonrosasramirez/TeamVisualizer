@@ -14,3 +14,12 @@ test("Can we grab a github using the constructor parameter", () => {
     expect(eng.github).toBe(github);
 
 })
+
+test("Can we grab getRole() in the employee class", () => {
+
+    const value = "Engineer";
+    const emp = new Employee(value); 
+    expect(emp.getRole()).toBe(value);
+
+})
+

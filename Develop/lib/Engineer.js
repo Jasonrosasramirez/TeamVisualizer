@@ -9,7 +9,7 @@ class Engineer extends Employee { // creats an engineer class which extends the 
 
     }
 
-    getrole() { return "Engineer" } // returns the job function. 
+    getRole() { return "Engineer" } // returns the job function. 
     getGitHub() { return this.github } // returns the github file path of the engineer.
 
 }

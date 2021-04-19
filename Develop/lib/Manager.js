@@ -9,7 +9,7 @@ class Manager extends Employee { // the manager class builds upon what the emplo
 
     }
 
-    getrole() { return "Manager" } // returns the role of manager  
+    getRole() { return "Manager" } // returns the role of manager  
     getPhone() { return this.phone } // returns the property of the phone number that is entered
 
 }
