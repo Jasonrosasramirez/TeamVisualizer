@@ -226,6 +226,6 @@ function promptQuestions() {
 
 }
 
-
 promptQuestions(); // this is the line that makes the magic happen. 
+
 
