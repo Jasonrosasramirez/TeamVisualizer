@@ -1,4 +1,4 @@
-const Engineer = require("../lib/Employee");
+const Engineer = require("../lib/Engineer");
 
 test("Testing the Engineer class to see if  class works", () => {
 
@@ -9,8 +9,8 @@ test("Testing the Engineer class to see if  class works", () => {
 
 test("Can we grab a github using the constructor parameter", () => {
 
-    const name = "gitHubDummyName";
-    const eng = new Engineer(name); 
-    expect(eng.name).toBe(name);
+    const github = "gitHubDummyName";
+    const eng = new Engineer(github); 
+    expect(eng.github).toBe(github);
 
 })
