@@ -184,9 +184,40 @@ function createInternObject() {
 
 }
 
+/* generate html sections */
+
+function writeToFile(fileName, template) {
+
+    //fs.writeFile(fileName, data, [encoding], [callback])
+      fs.writeFile(fileName, template, function (err) {
+
+  
+          if (err) {
+              return console.log(err); 
+          } else {
+              console.log("success");
+          }
+  
+          // source below
+          // https://nodejs.org/en/knowledge/file-system/how-to-write-files-in-nodejs/
+      } )
+  
+  } 
+  
+
+function PopulateTheHTML(answer) {
+    
+    // need to prompt to answer questions. inquirer
+    
+    var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
+    console.log(htmlTemplate);
+    writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
+
+}
+
 /* brings things together */
 
-function continueAddingMembers (answer) {
+function continueAddingMembers () {
     
     inquirer 
     .prompt(questionsAddMember) 
@@ -216,15 +247,15 @@ function continueAddingMembers (answer) {
 
 function promptQuestions() {
     
-    inquirer 
+    inquirer // I need to speak with your manager 
     .prompt(questionsManager) 
     .then((answer) => { 
 
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager);  
         console.log(managerObject);
         
-        continueAddingMembers(answer);
-    
+        //continueAddingMembers();
+        PopulateTheHTML(answer);
     })  
 
 }
@@ -232,44 +263,3 @@ function promptQuestions() {
 promptQuestions(); // this is the line that makes the magic happen. 
 
 
-/* generate html sections */
-
-// This is what actually writes/updates the HTML file. 
-function writeToFile(fileName, template) {
-
-    //fs.writeFile(fileName, data, [encoding], [callback])
-      fs.writeFile(fileName, template, function (err) {
-          // file = (string) | filepath to file 
-          // data = (string or buffer) | what you will write into the file
-          // encoding = (optional string) | utf8 is assumed if no encoding provided
-          // callback = (function (err)) | This function right here 
-  
-          /*
-          for debugging if needed 
-  
-          console.log(fileName); 
-          console.log(template);
-          */
-  
-          if (err) {
-              return console.log(err); 
-          } else {
-              console.log("success");
-          }
-  
-          // source below
-          // https://nodejs.org/en/knowledge/file-system/how-to-write-files-in-nodejs/
-      })
-  
-  } // Referenced in Init(). Init feeds in the desired information to this function
-  
-
-function PopulateTheHTML(answer) {
-    
-    // need to prompt to answer questions. inquirer
-    
-    var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
-    console.log(htmlTemplate);
-    writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
-
-}
