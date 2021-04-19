@@ -14,3 +14,19 @@ test("Can we grab an intern using the constructor parameter", () => {
     expect(int.school).toBe(school);
 
 })
+
+test("Can we grab getRole() in the intern class", () => {
+
+    const value = "Intern";
+    const int = new Intern(value); 
+    expect(int.getRole()).toBe(value);
+
+})
+
+test("Can we grab getSchool() in the intern class", () => {
+
+    const value = "ofMinnesota";
+    const int = new Intern("Intern", value); 
+    expect(int.getRole()).toBe(value);
+
+})

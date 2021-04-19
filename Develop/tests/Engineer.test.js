@@ -18,7 +18,7 @@ test("Can we grab a github using the constructor parameter", () => {
 test("Can we grab getRole() in the engineer class", () => {
 
     const value = "Engineer";
-    const emp = new Employee(value); 
+    const emp = new Engineer(value); 
     expect(emp.getRole()).toBe(value);
 
 })
@@ -26,7 +26,7 @@ test("Can we grab getRole() in the engineer class", () => {
 test("Can we grab getGitHub() in the engineer class", () => {
 
     const value = "githubAddress";
-    const emp = new Employee("Engineer", value); 
+    const emp = new Engineer("Engineer", value); 
     expect(emp.getRole()).toBe(value);
 
 })
