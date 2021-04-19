@@ -1,5 +1,5 @@
 // a function to generate the contecnt within the blank html
-function generateMarkdown(data) {
+function generateHTML(data) {
   
     // Everything within the return is what is actually written to the html file. 
     return ` 
@@ -38,5 +38,5 @@ function generateMarkdown(data) {
   } // this template will be passed onto the index.js script through the export below 
   
   
-  module.exports = generateMarkdown; // functions must always be exported before working in other scripts. In this case, the other three functions will be called within markdown. 
+  module.exports = generateHTML; // functions must always be exported before working in other scripts. In this case, the other three functions will be called within markdown. 
   // so the generate generateMarkdown actually carries over the readme template to the Index.js file so it can be written. 

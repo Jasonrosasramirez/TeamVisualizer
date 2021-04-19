@@ -1,5 +1,7 @@
 const fs = require("fs"); // Allows work with the file system. Can Read, create, update, delete, rename files. 
 const inquirer = require("inquirer"); 
+const generateHTML = require("./src/generateHTML");
+
 var groupIndexOrder = 0;
 
 /* imports the build classes to create a new employee object with certain classes. */ /*  All classes build off of the Employee.js */
@@ -203,6 +205,7 @@ function continueAddingMembers () {
          } else {
             
             console.log(" This is where the page function is called in ");
+            PopulateTheHTML();
 
         }
                 
@@ -261,28 +264,12 @@ function writeToFile(fileName, template) {
   } // Referenced in Init(). Init feeds in the desired information to this function
   
 
-function writeTheHTML() {
-    writeToFile();
-
-    /* Write
+function PopulateTheHTML() {
     
-    inquirer 
-    .prompt(questions) // prompts the array of questions on the terminal
-    .then((answer) => { // a promise made here. Answers access the hash where the name is stored. 
-        
-        
-        debugger
-        console.log("\n" + answer.title); // prints out what the title is. Access the hash using answer. 
-        console.log(answer.description);
+    // need to prompt to answer questions. inquirer
     
-        
-        var readme = generateMarkdown(answer); // represents the template within the generateMarkdown.js script as a variable. The answer hash is then used as the data parameter
-        console.log(readme); // prints the variable. What is represented here, will be printed on the readme file. 
-        writeToFile("./generateHere/README.md", readme);  // the desired readme directory - must update the readme itself, what we will write to the actual readme using file system. 
-        // The write to file function is updated with the template to the readme template 
-
-    })
-        
-    */
+    var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
+    console.log(htmlTemplate);
+    writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
 
 }
