@@ -231,3 +231,58 @@ promptQuestions(); // this is the line that makes the magic happen.
 
 /* generate html sections */
 
+// This is what actually writes/updates the README file. 
+function writeToFile(fileName, template) {
+
+    //fs.writeFile(fileName, data, [encoding], [callback])
+      fs.writeFile(fileName, template, function (err) {
+          // file = (string) | filepath to file 
+          // data = (string or buffer) | what you will write into the file
+          // encoding = (optional string) | utf8 is assumed if no encoding provided
+          // callback = (function (err)) | This function right here 
+  
+          /*
+          for debugging if needed 
+  
+          console.log(fileName); 
+          console.log(template);
+          */
+  
+          if (err) {
+              return console.log(err); 
+          } else {
+              console.log("success");
+          }
+  
+          // source below
+          // https://nodejs.org/en/knowledge/file-system/how-to-write-files-in-nodejs/
+      })
+  
+  } // Referenced in Init(). Init feeds in the desired information to this function
+  
+
+function writeTheHTML() {
+    writeToFile();
+
+    /* Write
+    
+    inquirer 
+    .prompt(questions) // prompts the array of questions on the terminal
+    .then((answer) => { // a promise made here. Answers access the hash where the name is stored. 
+        
+        
+        debugger
+        console.log("\n" + answer.title); // prints out what the title is. Access the hash using answer. 
+        console.log(answer.description);
+    
+        
+        var readme = generateMarkdown(answer); // represents the template within the generateMarkdown.js script as a variable. The answer hash is then used as the data parameter
+        console.log(readme); // prints the variable. What is represented here, will be printed on the readme file. 
+        writeToFile("./generateHere/README.md", readme);  // the desired readme directory - must update the readme itself, what we will write to the actual readme using file system. 
+        // The write to file function is updated with the template to the readme template 
+
+    })
+        
+    */
+
+}
