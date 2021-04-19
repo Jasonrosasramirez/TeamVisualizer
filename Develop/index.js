@@ -186,7 +186,7 @@ function createInternObject() {
 
 /* brings things together */
 
-function continueAddingMembers () {
+function continueAddingMembers (answer) {
     
     inquirer 
     .prompt(questionsAddMember) 
@@ -205,7 +205,7 @@ function continueAddingMembers () {
          } else {
             
             console.log(" This is where the page function is called in ");
-            PopulateTheHTML();
+            PopulateTheHTML(answer);
 
         }
                 
@@ -223,7 +223,7 @@ function promptQuestions() {
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager);  
         console.log(managerObject);
         
-        continueAddingMembers();
+        continueAddingMembers(answer);
     
     })  
 
@@ -264,7 +264,7 @@ function writeToFile(fileName, template) {
   } // Referenced in Init(). Init feeds in the desired information to this function
   
 
-function PopulateTheHTML() {
+function PopulateTheHTML(answer) {
     
     // need to prompt to answer questions. inquirer
     
