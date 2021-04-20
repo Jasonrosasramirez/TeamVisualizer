@@ -10,6 +10,9 @@ const Manager = require("./lib/Manager"); // imports the information from the em
 const Engineer = require("./lib/Engineer"); 
 const Intern = require("./lib/Intern");
 
+/* Object Array State Storage */
+
+managerArray = [];
 
 /* Questions that will be asked to the user */
 
@@ -238,7 +241,8 @@ function continueAddingMembers () {
 
          } else {
             
-            console.log(" This is where the page function is called in ");
+            console.log("\n Initiate page build ");
+            console.log("\n the manager array " + managerArray);
             //PopulateTheHTML(answer);
 
         }
@@ -253,13 +257,14 @@ function promptQuestions() {
     .prompt(questionsManager) 
     .then((answer) => { 
 
-        var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager);  
+        var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
         console.log(managerObject);
-    
-        PopulateTheHTML(answer); // passes on the manager responses to the html template
+   
+        managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
+
         continueAddingMembers();
-        console.log(managerObject); // test here  
-        
+    
+        return managerObject; 
     })  
 
 }
