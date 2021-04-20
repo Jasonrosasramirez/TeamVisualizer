@@ -26,8 +26,26 @@ function generateHTML(data) {
 
 <body>
     <header class = "jumbotron"> <!-- jumbotron is a bootstrap styling -->
-        <h1> My Team </h1>
-        <h1> ${data.nameManager} </h1>
+        <h1> Manager </h1>
+        <h1> Manager Name | ${data.nameManager} </h1>
+        <h2> Manager id | ${data.idManager} </h2>
+        <h2> Manager email | ${data.emailManager} </h2>
+        <h2> Manager phone | ${data.phoneManager} </h2>
+        <br>
+
+        <h1> Engineer </h1>
+        <h1> engineer Name | ${data.nameEngineer} </h1>
+        <h2> engineer id | ${data.idEngineer} </h2>
+        <h2> engineer email | ${data.emailEngineer} </h2>
+        <h2> engineer github | ${data.githubEngineer} </h2>
+        <br>
+
+        <h1> intern </h1>
+        <h1> intern Name | ${data.nameIntern} </h1>
+        <h2> intern id | ${data.idIntern} </h2>
+        <h2> intern email | ${data.emailIntern} </h2>
+        <h2> intern school | ${data.schoolIntern} </h2>
+    
     </header>
     
 </body>

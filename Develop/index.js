@@ -163,6 +163,7 @@ function createEngineerObject() {
         var engineerObject = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
         console.log(engineerObject);
 
+        PopulateTheHTML(answer);
         continueAddingMembers();
 
     })  
@@ -178,11 +179,13 @@ function createInternObject() {
         var InternObject = new Intern (answer.nameIntern, answer.Intern, answer.emailIntern, answer.schoolIntern); 
         console.log(InternObject);
 
+        PopulateTheHTML(answer);
         continueAddingMembers();
 
     })  
 
 }
+
 
 /* generate html sections */
 
@@ -202,9 +205,8 @@ function writeToFile(fileName, template) {
           // https://nodejs.org/en/knowledge/file-system/how-to-write-files-in-nodejs/
       } )
   
-  } 
+} 
   
-
 function PopulateTheHTML(answer) {
     
     // need to prompt to answer questions. inquirer
@@ -213,7 +215,8 @@ function PopulateTheHTML(answer) {
     console.log(htmlTemplate);
     writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
 
-}
+} 
+
 
 /* brings things together */
 
@@ -236,14 +239,13 @@ function continueAddingMembers () {
          } else {
             
             console.log(" This is where the page function is called in ");
-            PopulateTheHTML(answer);
+            //PopulateTheHTML(answer);
 
         }
                 
     })
 
 }
-
 
 function promptQuestions() {
     
@@ -253,9 +255,10 @@ function promptQuestions() {
 
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager);  
         console.log(managerObject);
-        
-        //continueAddingMembers();
-        PopulateTheHTML(answer);
+    
+        // PopulateTheHTML(answer); // passes on the manager responses to the html template
+        continueAddingMembers();
+
     })  
 
 }
