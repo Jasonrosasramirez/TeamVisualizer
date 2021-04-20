@@ -12,7 +12,8 @@ const Intern = require("./lib/Intern");
 
 /* Object Array State Storage */
 
-managerArray = [];
+var managerArray = [];
+
 
 /* Questions that will be asked to the user */
 
@@ -215,7 +216,7 @@ function PopulateTheHTML(answer) {
     // need to prompt to answer questions. inquirer
     
     var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
-    console.log(htmlTemplate);
+    // console.log(htmlTemplate);
     writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
 
 } 
@@ -223,7 +224,26 @@ function PopulateTheHTML(answer) {
 
 /* brings things together */
 
-function continueAddingMembers () {
+function promptQuestions() {
+    
+    inquirer // I need to speak with your manager 
+    .prompt(questionsManager) 
+    .then((answer) => { 
+
+        var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
+        console.log(managerObject); // debugging
+   
+        managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
+
+        PopulateTheHTML(answer);
+        //continueAddingMembers();
+    
+    })  
+
+}
+
+
+function continueAddingMembers (answer) {
     
     inquirer 
     .prompt(questionsAddMember) 
@@ -239,33 +259,18 @@ function continueAddingMembers () {
 
             createInternObject();
 
-         } else {
+         } 
+         
+         else {     // Team is complete 
             
-            console.log("\n Initiate page build ");
-            console.log("\n the manager array " + managerArray);
-            //PopulateTheHTML(answer);
+            console.log("\n     Initiate page build ");
+            console.log("\n     The manager array [" + managerArray + "]");
+            
+            PopulateTheHTML();
 
         }
                 
     })
-
-}
-
-function promptQuestions() {
-    
-    inquirer // I need to speak with your manager 
-    .prompt(questionsManager) 
-    .then((answer) => { 
-
-        var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
-        console.log(managerObject);
-   
-        managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
-
-        continueAddingMembers();
-    
-        return managerObject; 
-    })  
 
 }
 
