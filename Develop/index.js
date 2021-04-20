@@ -13,6 +13,7 @@ const Intern = require("./lib/Intern");
 /* Object Array State Storage */
 
 var managerArray = [];
+var objectUltima; 
 
 
 /* Questions that will be asked to the user */
@@ -183,7 +184,7 @@ function createInternObject() {
         var InternObject = new Intern (answer.nameIntern, answer.Intern, answer.emailIntern, answer.schoolIntern); 
         console.log(InternObject);
 
-        PopulateTheHTML(answer);
+        PopulateTheHTML(" ", answer);
         continueAddingMembers();
 
     })  
@@ -231,19 +232,19 @@ function promptQuestions() {
     .then((answer) => { 
 
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
-        console.log(managerObject); // debugging
+        console.log(managerObject + "   this is the manager array "); // debugging
    
         managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
 
         PopulateTheHTML(answer);
-        //continueAddingMembers();
+        // continueAddingMembers();
     
     })  
 
 }
 
 
-function continueAddingMembers (answer) {
+function continueAddingMembers () {
     
     inquirer 
     .prompt(questionsAddMember) 
@@ -266,7 +267,7 @@ function continueAddingMembers (answer) {
             console.log("\n     Initiate page build ");
             console.log("\n     The manager array [" + managerArray + "]");
             
-            PopulateTheHTML();
+            //PopulateTheHTML();
 
         }
                 
