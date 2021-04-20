@@ -256,9 +256,10 @@ function promptQuestions() {
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager);  
         console.log(managerObject);
     
-        // PopulateTheHTML(answer); // passes on the manager responses to the html template
+        PopulateTheHTML(answer); // passes on the manager responses to the html template
         continueAddingMembers();
-
+        console.log(managerObject); // test here  
+        
     })  
 
 }
