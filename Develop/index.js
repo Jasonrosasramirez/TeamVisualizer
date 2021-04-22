@@ -219,6 +219,7 @@ function PopulateTheHTML(answer) {
     var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
     // console.log(htmlTemplate);
     writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
+    console.log("This is the manager array within populateTheHTML() " + managerArray);
 
 } 
 
@@ -235,7 +236,7 @@ function promptQuestions() {
         console.log(managerObject); // debugging
    
         managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
-        console.log("This is the manager array 2 " + managerArray);
+        console.log("This is the manager array within promptQuestions() " + managerArray);
         
         PopulateTheHTML(answer);
         // continueAddingMembers();
@@ -243,7 +244,7 @@ function promptQuestions() {
         
     })  
 
-    return managerArray;
+    // return managerArray;
 }
 
 
