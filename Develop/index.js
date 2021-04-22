@@ -221,6 +221,8 @@ function PopulateTheHTML(answer) {
     writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
     console.log("This is the manager array within populateTheHTML() " + managerArray);
 
+    console.log("\nObject within the Populate HTML");
+    //console.log(managerObject);
 } 
 
 
@@ -233,18 +235,20 @@ function promptQuestions() {
     .then((answer) => { 
 
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
+        console.log("Object within the promptQuestions()");
         console.log(managerObject); // debugging
    
         managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
-        console.log("This is the manager array within promptQuestions() " + managerArray);
+        console.log("\nThis is the manager array within promptQuestions() " + managerArray);
         
         PopulateTheHTML(answer);
+        
+        
         // continueAddingMembers();
     
         
     })  
 
-    // return managerArray;
 }
 
 
