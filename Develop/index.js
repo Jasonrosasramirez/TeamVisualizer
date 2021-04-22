@@ -232,17 +232,18 @@ function promptQuestions() {
     .then((answer) => { 
 
         var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
-        console.log(managerObject + "   this is the manager array "); // debugging
+        console.log(managerObject); // debugging
    
         managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
-
+        console.log("This is the manager array 2 " + managerArray);
         
         PopulateTheHTML(answer);
         // continueAddingMembers();
     
-
+        
     })  
 
+    return managerArray;
 }
 
 
