@@ -13,7 +13,7 @@ const Intern = require("./lib/Intern");
 /* Object Array State Storage */
 
 var managerArray = [];
-var objectUltima; 
+
 
 
 /* Questions that will be asked to the user */
@@ -184,7 +184,7 @@ function createInternObject() {
         var InternObject = new Intern (answer.nameIntern, answer.Intern, answer.emailIntern, answer.schoolIntern); 
         console.log(InternObject);
 
-        PopulateTheHTML(" ", answer);
+        PopulateTheHTML(answer);
         continueAddingMembers();
 
     })  
@@ -236,9 +236,11 @@ function promptQuestions() {
    
         managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
 
+        
         PopulateTheHTML(answer);
         // continueAddingMembers();
     
+
     })  
 
 }
