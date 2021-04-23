@@ -170,7 +170,6 @@ function createEngineerObject() {
         var engineerObject = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
         console.log(engineerObject);
 
-        PopulateTheHTML(answer);
         continueAddingMembers();
 
     })  
@@ -183,10 +182,9 @@ function createInternObject() {
     .prompt(questionsIntern)
     .then((answer) => {
 
-        var InternObject = new Intern (answer.nameIntern, answer.Intern, answer.emailIntern, answer.schoolIntern); 
+        var InternObject = new Intern (answer.nameIntern, answer.idIntern, answer.emailIntern, answer.schoolIntern); 
         console.log(InternObject);
 
-        PopulateTheHTML(answer);
         continueAddingMembers();
 
     })  
