@@ -216,13 +216,15 @@ function PopulateTheHTML(answer) {
     
     // need to prompt to answer questions. inquirer
     
-    var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
-    // console.log(htmlTemplate);
-    writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
-    console.log("This is the manager array within populateTheHTML() " + managerArray);
-
-    console.log("\nObject within the Populate HTML");
+    console.log("\nObject within PopulateTheHTML() ");
     console.log(managerObject);
+
+    console.log("\nName of Manager ");
+    console.log(managerObject.name);
+
+    var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
+    writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
+    
 } 
 
 
@@ -276,9 +278,8 @@ function continueAddingMembers () {
          else {     // Team is complete 
             
             console.log("\n     Initiate page build ");
-            console.log("\n     The manager array [" + managerArray + "]");
-            
-            //PopulateTheHTML();
+                        
+            PopulateTheHTML(managerObject); // switch out the manager array to the ultima object
 
         }
                 
