@@ -27,10 +27,10 @@ function generateHTML(data) {
 <body>
     <header class = "jumbotron"> <!-- jumbotron is a bootstrap styling -->
         <h1> Manager </h1>
-        <h1> Manager Name | ${data.nameManager} </h1>
-        <h2> Manager id | ${data.idManager} </h2>
-        <h2> Manager email | ${data.emailManager} </h2>
-        <h2> Manager phone | ${data.phoneManager} </h2>
+        <h1> Manager Name | ${data.name} </h1>
+        <h2> Manager id | ${data.id} </h2>
+        <h2> Manager email | ${data.email} </h2>
+        <h2> Manager phone | ${data.phone} </h2>
         <br>
 
         <h1> Engineer </h1>
