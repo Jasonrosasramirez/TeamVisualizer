@@ -35,3 +35,9 @@
 .cardClass { 
     margin-left: 10px;
 }
+
+#textColoring {
+    color: var(--redJumbotronColor); 
+    font-weight: bold;
+
+}
