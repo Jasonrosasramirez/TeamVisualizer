@@ -17,6 +17,9 @@ var managerArray = [];
 // exprimenting ----------------------------------------------------------------
 
 var managerObject; 
+var engineerObject;
+var InternObject;
+
 
 /* Questions that will be asked to the user */
 
@@ -167,8 +170,8 @@ function createEngineerObject() {
     .prompt(questionsEngineer)
     .then((answer) => {
 
-        var engineerObject = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
-        console.log(engineerObject);
+        engineerObject = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
+        //console.log(engineerObject);
 
         continueAddingMembers();
 
@@ -182,8 +185,8 @@ function createInternObject() {
     .prompt(questionsIntern)
     .then((answer) => {
 
-        var InternObject = new Intern (answer.nameIntern, answer.idIntern, answer.emailIntern, answer.schoolIntern); 
-        console.log(InternObject);
+        InternObject = new Intern (answer.nameIntern, answer.idIntern, answer.emailIntern, answer.schoolIntern); 
+        //console.log(InternObject);
 
         continueAddingMembers();
 
@@ -216,11 +219,14 @@ function PopulateTheHTML() {
     
     // need to prompt to answer questions. inquirer
     
-    console.log("\nObject within PopulateTheHTML() ");
+    console.log("\nManager Object within PopulateTheHTML() ");
     console.log(managerObject);
 
-    console.log("\nName of Manager ");
-    console.log(managerObject.name);
+    console.log("\nEngineer Object within PopulateTheHTML() ");
+    console.log(engineerObject);
+
+    console.log("\nIntern Object within PopulateTheHTML() ");
+    console.log(InternObject);
 
     var htmlTemplate = generateHTML(managerObject); // storing the build within the generateHTML as a variable
     writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
