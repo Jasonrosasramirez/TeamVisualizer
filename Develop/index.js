@@ -13,8 +13,10 @@ const Intern = require("./lib/Intern");
 /* Object Array State Storage */
 
 var managerArray = [];
+  
+// exprimenting ----------------------------------------------------------------
 
-
+var managerObject; 
 
 /* Questions that will be asked to the user */
 
@@ -222,7 +224,7 @@ function PopulateTheHTML(answer) {
     console.log("This is the manager array within populateTheHTML() " + managerArray);
 
     console.log("\nObject within the Populate HTML");
-    //console.log(managerObject);
+    console.log(managerObject);
 } 
 
 
@@ -234,12 +236,15 @@ function promptQuestions() {
     .prompt(questionsManager) 
     .then((answer) => { 
 
-        var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
+        // var managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
+        managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
+        managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
+        
         console.log("Object within the promptQuestions()");
         console.log(managerObject); // debugging
    
-        managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
-        console.log("\nThis is the manager array within promptQuestions() " + managerArray);
+        
+        //console.log("\nThis is the manager array within promptQuestions() " + managerArray);
         
         PopulateTheHTML(answer);
         
