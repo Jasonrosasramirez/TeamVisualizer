@@ -61,9 +61,9 @@ function generateHTML(dataManager, dataTeammate1, dataTeammate2) {
             </div>
             
             <ul class="list-group list-group-flush">
-                <li class="list-group-item border border-2">ID: ${dataTeammate1.id} </li>
-                <li class="list-group-item border border-2">Email: ${dataTeammate1.email}</li>
-                <li class="list-group-item border border-2">GitHub: ${dataTeammate1.github}</li>
+                <li class="list-group-item border border-2">ID: <span class = "textColoring"> ${dataTeammate1.id} </span> </li>
+                <li class="list-group-item border border-2">Email: <span class = "textColoring"> ${dataTeammate1.email} </span> </li>
+                <li class="list-group-item border border-2">GitHub: <span class = "textColoring"> ${dataTeammate1.github} </span> </li>
             </ul>
 
         </div>
