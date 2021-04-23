@@ -212,7 +212,7 @@ function writeToFile(fileName, template) {
   
 } 
   
-function PopulateTheHTML(answer) {
+function PopulateTheHTML() {
     
     // need to prompt to answer questions. inquirer
     
@@ -222,7 +222,7 @@ function PopulateTheHTML(answer) {
     console.log("\nName of Manager ");
     console.log(managerObject.name);
 
-    var htmlTemplate = generateHTML(answer); // storing the build within the generateHTML as a variable
+    var htmlTemplate = generateHTML(managerObject); // storing the build within the generateHTML as a variable
     writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
     
 } 
@@ -279,7 +279,7 @@ function continueAddingMembers () {
             
             console.log("\n     Initiate page build ");
                         
-            PopulateTheHTML(managerObject); // switch out the manager array to the ultima object
+            PopulateTheHTML(); // switch out the manager array to the ultima object
 
         }
                 
