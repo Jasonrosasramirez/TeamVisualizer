@@ -18,7 +18,7 @@ function generateHTML(dataManager, dataTeammate1, dataTeammate2) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> <!-- Bootstrap -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/> <!-- Icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/> <!-- Text Fonts -->
-    <link rel="stylesheet" href="./Develop/style.css"/> <!-- Additinal Styling -->
+    <link rel="stylesheet" href="../style.css"/> <!-- Additinal Styling -->
     
     <title>Team Visualizer</title>
 
@@ -26,31 +26,73 @@ function generateHTML(dataManager, dataTeammate1, dataTeammate2) {
 
 <body>
     <header class = "jumbotron"> <!-- jumbotron is a bootstrap styling -->
-        <h1> Manager </h1>
-        <h1> Manager Name | ${dataManager.name} </h1>
-        <h2> Manager id | ${dataManager.id} </h2>
-        <h2> Manager email | ${dataManager.email} </h2>
-        <h2> Manager phone | ${dataManager.phone} </h2>
-        <br>
+        <h1> My Team </h1>
 
-        <h1> Engineer </h1>
-        <h1> engineer Name | ${dataTeammate1.name} </h1>
-        <h2> engineer id | ${dataTeammate1.id} </h2>
-        <h2> engineer email | ${dataTeammate1.email} </h2>
-        <h2> engineer github | ${dataTeammate1.github} </h2>
-        <br>
-
-        <h1> intern </h1>
-        <h1> intern Name | ${dataTeammate2.name} </h1>
-        <h2> intern id | ${dataTeammate2.id} </h2>
-        <h2> intern email | ${dataTeammate2.email} </h2>
-        <h2> intern school | ${dataTeammate2.school} </h2>
-    
     </header>
     
+
+    <div class = "main">
+        <!-- Manager example -->
+        <div class="card shadow " style="width: 18rem;">
+            <div class="card-body cardTitle-head">
+                <h4 class="card-title">${dataManager.name}</h4>
+                <div class = "card_iconANDtitle">
+                    <i class="fas fa-mug-hot"></i>
+                    <h5 class="card-title cardClass">Manager</h5>
+                </div>
+            </div>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item border border-2">ID: ${dataManager.id} </li>
+                <li class="list-group-item border border-2">Email: ${dataManager.email} </li>
+                <li class="list-group-item border border-2">Office Number: ${dataManager.phone}</li>
+            </ul>
+
+        </div>
+
+        <!-- Engineer example -->
+        <div class="card shadow" style="width: 18rem;">
+            <div class="card-body cardTitle-head">
+                <h4 class="card-title">${dataTeammate1.name}</h4>
+                <div class = "card_iconANDtitle">
+                    <i class="fas fa-glasses"></i>
+                    <h5 class="card-title cardClass">Engineer</h5>
+                </div>
+            </div>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item border border-2">ID: ${dataTeammate1.id} </li>
+                <li class="list-group-item border border-2">Email: ${dataTeammate1.email}</li>
+                <li class="list-group-item border border-2">GitHub: ${dataTeammate1.github}</li>
+            </ul>
+
+        </div>
+
+        <!-- Intern example -->
+        <div class="card shadow" style="width: 18rem;">
+            <div class="card-body cardTitle-head">
+                <h4 class="card-title">${dataTeammate2.name}</h4>
+                <div class = "card_iconANDtitle">
+                    <i class="fas fa-user-graduate"></i>
+                    <h5 class="card-title cardClass">Intern</h5>
+                </div>
+            </div>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item border border-2">ID: ${dataTeammate2.id}</li>
+                <li class="list-group-item border border-2">Email: ${dataTeammate2.email}</li>
+                <li class="list-group-item border border-2">School: ${dataTeammate2.school}</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <script src = "./Develop/script.js"></script>
 </body>
 
 </html>
+
   `; 
   
   } // this template will be passed onto the index.js script through the export below 
