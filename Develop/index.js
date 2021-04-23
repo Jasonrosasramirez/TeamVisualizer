@@ -88,25 +88,6 @@ var questionsEngineer = [
         name: "githubEngineer"
     }
 
-    /*
-    
-    done building team roster
-        yes
-        no 
-
-    intern card
-        name
-        ID 
-        email address
-        school 
-
-    finised building team? 
-        yes, display page 
-        no, loop again
-
-    */
-
-
 ]; 
 
 var questionsIntern = [
@@ -171,8 +152,7 @@ function createEngineerObject() {
     .then((answer) => {
 
         engineerObject = new Engineer (answer.nameEngineer, answer.idEngineer, answer.emailEngineer, answer.githubEngineer); 
-        //console.log(engineerObject);
-
+        
         continueAddingMembers();
 
     })  
@@ -186,8 +166,7 @@ function createInternObject() {
     .then((answer) => {
 
         InternObject = new Intern (answer.nameIntern, answer.idIntern, answer.emailIntern, answer.schoolIntern); 
-        //console.log(InternObject);
-
+        
         continueAddingMembers();
 
     })  
