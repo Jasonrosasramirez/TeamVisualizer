@@ -18,7 +18,7 @@ var managerArray = [];
 
 var managerObject; 
 var engineerObject;
-var InternObject;
+var internObject;
 
 
 /* Questions that will be asked to the user */
@@ -165,7 +165,7 @@ function createInternObject() {
     .prompt(questionsIntern)
     .then((answer) => {
 
-        InternObject = new Intern (answer.nameIntern, answer.idIntern, answer.emailIntern, answer.schoolIntern); 
+        internObject = new Intern (answer.nameIntern, answer.idIntern, answer.emailIntern, answer.schoolIntern); 
         
         continueAddingMembers();
 
@@ -205,9 +205,9 @@ function PopulateTheHTML() {
     console.log(engineerObject);
 
     console.log("\nIntern Object within PopulateTheHTML() ");
-    console.log(InternObject);
+    console.log(internObject);
 
-    var htmlTemplate = generateHTML(managerObject); // storing the build within the generateHTML as a variable
+    var htmlTemplate = generateHTML(managerObject, engineerObject, internObject); // storing the build within the generateHTML as a variable
     writeToFile("./src/blank.html", htmlTemplate); // desired file path location, passing on what is in the generateHTML file function template 
     
 } 

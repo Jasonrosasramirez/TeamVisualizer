@@ -1,5 +1,5 @@
 // a function to generate the contecnt within the blank html
-function generateHTML(data) {
+function generateHTML(dataManager, dataTeammate1, dataTeammate2) {
   
     // Everything within the return is what is actually written to the html file. 
     return ` 
@@ -27,24 +27,24 @@ function generateHTML(data) {
 <body>
     <header class = "jumbotron"> <!-- jumbotron is a bootstrap styling -->
         <h1> Manager </h1>
-        <h1> Manager Name | ${data.name} </h1>
-        <h2> Manager id | ${data.id} </h2>
-        <h2> Manager email | ${data.email} </h2>
-        <h2> Manager phone | ${data.phone} </h2>
+        <h1> Manager Name | ${dataManager.name} </h1>
+        <h2> Manager id | ${dataManager.id} </h2>
+        <h2> Manager email | ${dataManager.email} </h2>
+        <h2> Manager phone | ${dataManager.phone} </h2>
         <br>
 
         <h1> Engineer </h1>
-        <h1> engineer Name | ${data.nameEngineer} </h1>
-        <h2> engineer id | ${data.idEngineer} </h2>
-        <h2> engineer email | ${data.emailEngineer} </h2>
-        <h2> engineer github | ${data.githubEngineer} </h2>
+        <h1> engineer Name | ${dataTeammate1.name} </h1>
+        <h2> engineer id | ${dataTeammate1.id} </h2>
+        <h2> engineer email | ${dataTeammate1.email} </h2>
+        <h2> engineer github | ${dataTeammate1.github} </h2>
         <br>
 
         <h1> intern </h1>
-        <h1> intern Name | ${data.nameIntern} </h1>
-        <h2> intern id | ${data.idIntern} </h2>
-        <h2> intern email | ${data.emailIntern} </h2>
-        <h2> intern school | ${data.schoolIntern} </h2>
+        <h1> intern Name | ${dataTeammate2.name} </h1>
+        <h2> intern id | ${dataTeammate2.id} </h2>
+        <h2> intern email | ${dataTeammate2.email} </h2>
+        <h2> intern school | ${dataTeammate2.school} </h2>
     
     </header>
     
