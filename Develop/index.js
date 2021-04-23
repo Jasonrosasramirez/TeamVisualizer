@@ -240,17 +240,17 @@ function promptQuestions() {
         managerObject = new Manager (answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager); // this embodies the manager's responces. This needs to be exported 
         managerArray = [answer.nameManager, answer.idManager, answer.emailManager, answer.phoneManager];
         
+        /* DEBUGGING. DELETE when complete. 
+        
         console.log("Object within the promptQuestions()");
         console.log(managerObject); // debugging
-   
+        console.log("\nThis is the manager array within promptQuestions() " + managerArray);
         
-        //console.log("\nThis is the manager array within promptQuestions() " + managerArray);
-        
-        PopulateTheHTML(answer);
-        
-        
-        // continueAddingMembers();
-    
+        PopulateTheHTML(answer); // should not be in this loop. 
+
+        */
+     
+        continueAddingMembers();   
         
     })  
 
